@@ -1,5 +1,7 @@
 Lecture 17.
 
+- Digital Ocean
+  - Droplet
 - `nginx.conf`
 - Context
   - events Context
