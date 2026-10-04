@@ -20,4 +20,5 @@ Lecture 17.
 - Main / Global Context
 - Directive
 - NGINX uses an event-based connection processing model
-- Active and Passive/Fallback Servers
+- Active and Passive/Fallback Servers (?)
+- SCP (Secure Copy Protocol)
