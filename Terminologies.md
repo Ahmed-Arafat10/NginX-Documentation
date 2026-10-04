@@ -22,3 +22,8 @@ Lecture 17.
 - NGINX uses an event-based connection processing model
 - Active and Passive/Fallback Servers (?)
 - SCP (Secure Copy Protocol)
+- location context modifier
+  - no modifier → prefix match
+  - `=` → exact match modifier
+  - `~` → case-sensitive regular expression
+  - `~*` → case-insensitive regular expression
