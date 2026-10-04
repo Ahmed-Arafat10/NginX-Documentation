@@ -4,6 +4,11 @@ Lecture 17.
 - NGINX master process (runs as www-data)
 - Digital Ocean
   - Droplet
+
+- install NGINX via operating-system package managers.
+- install & build NGINX from source code.
+
+
 - `nginx.conf`
 - Context
   - events Context
