@@ -27,3 +27,5 @@ Lecture 17.
   - `=` → exact match modifier
   - `~` → case-sensitive regular expression
   - `~*` → case-insensitive regular expression
+  - `^~` → Preferential prefix match
+- Location Matching Priority `= > ^~ > ~* > ~ | (no modifier)`
