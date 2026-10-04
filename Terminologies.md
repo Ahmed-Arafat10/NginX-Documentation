@@ -1,5 +1,7 @@
 Lecture 17.
 
+- NGINX master process (runs as root)
+- NGINX master process (runs as www-data)
 - Digital Ocean
   - Droplet
 - `nginx.conf`
