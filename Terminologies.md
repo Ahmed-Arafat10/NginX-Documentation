@@ -29,3 +29,14 @@ Lecture 17.
   - `~*` → case-insensitive regular expression
   - `^~` → Preferential prefix match
 - Location Matching Priority `= > ^~ > ~* > ~ | (no modifier)`
+- Variables
+  - User-Defined Variables (`set $variable value;`)
+  - Built-In NGINX Variables
+    - `$args`
+    - `$body_bytes_sent`
+    - `$body_bytes_received`
+    - `$connection_requests`
+    - `$date_local`
+    - `$hostname`
+    - `$nginx_version`
+- The `$arg_<name>` Pattern
