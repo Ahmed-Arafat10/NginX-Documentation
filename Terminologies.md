@@ -39,4 +39,8 @@ Lecture 17.
     - `$date_local`
     - `$hostname`
     - `$nginx_version`
-- The `$arg_<name>` Pattern
+- `$arg_<name>` Pattern
+- `return` Directive (`return <status-code> <URL-or-response>;`)
+  - Its resource consumption is lower than `rewrite`
+- `rewrite` Directive (`rewrite <regex> <replacement> [flag];`)
+  - Capturing Values with Rewrite 
