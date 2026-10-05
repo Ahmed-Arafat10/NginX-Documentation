@@ -43,4 +43,7 @@ Lecture 17.
 - `return` Directive (`return <status-code> <URL-or-response>;`)
   - Its resource consumption is lower than `rewrite`
 - `rewrite` Directive (`rewrite <regex> <replacement> [flag];`)
-  - Capturing Values with Rewrite 
+  - Capturing Values with Rewrite
+- `try_files`
+- catch-all block (`location /`)
+- FastCGI
