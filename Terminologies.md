@@ -47,3 +47,12 @@ Lecture 17.
 - `try_files`
 - catch-all block (`location /`)
 - FastCGI
+- Forward Proxy
+- Reverse Proxy
+  - Load balancing
+  - Protection against attacks
+    - DOS
+    - Rate Limiting
+  - Caching
+  - SSL/TLS encryption handling
+- NetTools (Linux)
