@@ -19,6 +19,16 @@ Lecture 17.
   - mail Context
 - Main / Global Context
 - Directive
+  - `events`
+  - `html`
+  - `server`
+  - `include`
+  - `listen`
+  - `proxy_pass`
+  - `fastcgi_pass`
+  - `location`
+  - `proxy_set_header`
+  - `log_format`
 - NGINX uses an event-based connection processing model
 - Active and Passive/Fallback Servers (?)
 - SCP (Secure Copy Protocol)
@@ -56,3 +66,9 @@ Lecture 17.
   - Caching
   - SSL/TLS encryption handling
 - NetTools (Linux)
+
+
+
+### NginX Modules used
+- `--with-http_image_filter_module=dynamic`
+- `--with-http_realip_module`
