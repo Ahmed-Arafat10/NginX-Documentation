@@ -3,7 +3,7 @@ Lecture 17.
 - NGINX master process (runs as root)
 - NGINX master process (runs as www-data)
 - Digital Ocean
-  - Droplet
+    - Droplet
 
 - install NGINX via operating-system package managers.
 - install & build NGINX from source code.
@@ -11,64 +11,84 @@ Lecture 17.
 
 - `nginx.conf`
 - Context
-  - events Context
-  - http Context
-  - server Context
-  - location Context
-  - upstream Context
-  - mail Context
+    - events Context
+    - http Context
+    - server Context
+    - location Context
+    - upstream Context
+    - mail Context
 - Main / Global Context
 - Directive
-  - `events`
-  - `html`
-  - `server`
-  - `include`
-  - `listen`
-  - `proxy_pass`
-  - `fastcgi_pass`
-  - `location`
-  - `proxy_set_header`
-  - `log_format`
+    - `events`
+    - `html`
+    - `server`
+    - `include`
+    - `listen`
+    - `proxy_pass`
+    - `fastcgi_pass`
+    - `location`
+    - `proxy_set_header`
+    - `log_format`
+    - `add_header`
 - NGINX uses an event-based connection processing model
 - Active and Passive/Fallback Servers (?)
 - SCP (Secure Copy Protocol)
 - location context modifier
-  - no modifier → prefix match
-  - `=` → exact match modifier
-  - `~` → case-sensitive regular expression
-  - `~*` → case-insensitive regular expression
-  - `^~` → Preferential prefix match
+    - no modifier → prefix match
+    - `=` → exact match modifier
+    - `~` → case-sensitive regular expression
+    - `~*` → case-insensitive regular expression
+    - `^~` → Preferential prefix match
 - Location Matching Priority `= > ^~ > ~* > ~ | (no modifier)`
 - Variables
-  - User-Defined Variables (`set $variable value;`)
-  - Built-In NGINX Variables
-    - `$args`
-    - `$body_bytes_sent`
-    - `$body_bytes_received`
-    - `$connection_requests`
-    - `$date_local`
-    - `$hostname`
-    - `$nginx_version`
+    - User-Defined Variables (`set $variable value;`)
+    - Built-In NGINX Variables
+        - `$args`
+        - `$body_bytes_sent`
+        - `$body_bytes_received`
+        - `$connection_requests`
+        - `$date_local`
+        - `$hostname`
+        - `$nginx_version`
 - `$arg_<name>` Pattern
 - `return` Directive (`return <status-code> <URL-or-response>;`)
-  - Its resource consumption is lower than `rewrite`
+    - Its resource consumption is lower than `rewrite`
 - `rewrite` Directive (`rewrite <regex> <replacement> [flag];`)
-  - Capturing Values with Rewrite
+    - Capturing Values with Rewrite
 - `try_files`
 - catch-all block (`location /`)
 - FastCGI
 - Forward Proxy
 - Reverse Proxy
-  - Load balancing
-  - Protection against attacks
-    - DOS
-    - Rate Limiting
-  - Caching
-  - SSL/TLS encryption handling
+    - Load balancing
+    - Protection against attacks
+        - DOS
+        - Rate Limiting
+    - Caching
+    - SSL/TLS encryption handling
 - NetTools (Linux)
 - Client-Side Caching
 
+### HTTP Headers
+
+- `X-Real-IP`
+- `X-Forwarded-For`
+- `Cache-Control`
+    - `Cache-Control: public`: response can be cached not only by the end user's browser, but also by intermediate
+      proxy/cache servers
+    - `Cache-Control: private`: indicates that the response should only be cached by the end client.
+    - `Cache-Control: public|private, max-age=<seconds>`: specifies how long a resource can remain cached before it is
+      considered stale.
+- `Expires: <specific-date>`
+- Note: When `max-age` and `Expires` are present, `max-age` takes precedence.
+- `Pragma`: deprecated counterpart to `Cache-Control`.
+- `Vary` : It tells caches which request headers can affect the representation of the response. 
+  - `Vary: Accept-Encoding`: Like saying cache this response, pay attention to Accept-Encoding because the response can
+    change depending on whether the client supports gzip, etc.
+  - `Vary: Accept-Language`: The response changes based on the client's preferred language.
+  - `Vary: *`: it prevents a cache from using the response for subsequent requests.
 
 ### NginX Modules used
+
 - `--with-http_image_filter_module=dynamic`
 - `--with-http_realip_module`
