@@ -66,7 +66,7 @@ Lecture 17.
   - Caching
   - SSL/TLS encryption handling
 - NetTools (Linux)
-
+- Client-Side Caching
 
 
 ### NginX Modules used
