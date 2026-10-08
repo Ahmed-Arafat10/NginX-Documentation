@@ -65,6 +65,7 @@ Lecture 17.
         - `$request_method`
         - `$host`
         - `$request_uri`
+        - `$upstream_cache_status`
 - `$arg_<name>` Pattern
 - `return` Directive (`return <status-code> <URL-or-response>;`)
     - Its resource consumption is lower than `rewrite`
