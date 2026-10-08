@@ -1,27 +1,23 @@
 Lecture 17.
 
 - NGINX master process (runs as root)
-- NGINX master process (runs as www-data)
+- NGINX worker process (runs as www-data)
 - Digital Ocean
     - Droplet
-
-- install NGINX via operating-system package managers.
-- install & build NGINX from source code.
-
+- NGINX installation
+  - via operating-system package managers (`apt-get` / `yum`).
+  - via install & build from source code.
 
 - `nginx.conf`
 - Context
-    - events Context
-    - http Context
-    - server Context
-    - location Context
-    - upstream Context
-    - mail Context
-- Main / Global Context
-- Directive
+    - `Main / Global` 
     - `events`
-    - `html`
+    - `http`
     - `server`
+    - `location`
+    - `upstream`
+    - `mail`
+- Directive
     - `include`
     - `listen`
     - `proxy_pass`
@@ -87,6 +83,12 @@ Lecture 17.
     change depending on whether the client supports gzip, etc.
   - `Vary: Accept-Language`: The response changes based on the client's preferred language.
   - `Vary: *`: it prevents a cache from using the response for subsequent requests.
+
+- Gzip compression
+- Transferred Data vs. Resource Size
+- Note: Compression Uses Server Resources (CPU)
+
+
 
 ### NginX Modules used
 
