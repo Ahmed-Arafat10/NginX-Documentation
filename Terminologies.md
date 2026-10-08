@@ -105,6 +105,9 @@ Lecture 17.
 - Note: When testing manually with `curl` client must explicitly indicate its support for compressed content, A request without an appropriate `Accept-Encoding` header does not necessarily cause NGINX to return the compressed representation.
 - Note: `gzip_min_length` default value is `20 bytes`
 
+- Hard refresh vs Soft refresh (Browser)
+- Cache Busting: a technique web developers use to force a browser to load the newest version of a static file (such as CSS or JavaScript) instead of a previously saved, stale copy
+
 - Micro Caching (Caching for Dynamic Content)
 
 
