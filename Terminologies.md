@@ -119,3 +119,6 @@ Lecture 17.
 
 - `--with-http_image_filter_module=dynamic`
 - `--with-http_realip_module`
+
+### HTTP Status Codes
+- `304` → Not Modified
