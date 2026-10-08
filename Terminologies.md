@@ -71,27 +71,6 @@ Lecture 17.
     - Caching
     - SSL/TLS encryption handling
 - NetTools (Linux)
-- Client-Side Caching
-
-### HTTP Headers
-- `X-Real-IP`
-- `X-Forwarded-For`
-- `Content-Encoding: gzip`
-- `Cache-Control`
-    - `Cache-Control: public`: response can be cached not only by the end user's browser, but also by intermediate
-      proxy/cache servers
-    - `Cache-Control: private`: indicates that the response should only be cached by the end client.
-    - `Cache-Control: public|private, max-age=<seconds>`: specifies how long a resource can remain cached before it is
-      considered stale.
-- `Expires: <specific-date>`
-- Note: When `max-age` and `Expires` are present, `max-age` takes precedence.
-- `Pragma`: deprecated counterpart to `Cache-Control`.
-- `Vary` : It tells caches which request headers can affect the representation of the response. 
-  - `Vary: Accept-Encoding`: Like saying cache this response, pay attention to Accept-Encoding because the response can
-    change depending on whether the client supports gzip, etc.
-  - `Vary: Accept-Language`: The response changes based on the client's preferred language.
-  - `Vary: *`: it prevents a cache from using the response for subsequent requests.
-
 - Gzip compression
 - Transferred Data vs. Resource Size
 - Note: Compression Uses Server Resources (CPU)
@@ -104,16 +83,39 @@ Lecture 17.
 - Note: Do not configure Gzip for `.jpg`, `.jpeg`, and `.png` images because these formats are already compressed.
 - Note: When testing manually with `curl` client must explicitly indicate its support for compressed content, A request without an appropriate `Accept-Encoding` header does not necessarily cause NGINX to return the compressed representation.
 - Note: `gzip_min_length` default value is `20 bytes`
-
 - Hard refresh vs Soft refresh (Browser)
 - Cache Busting: a technique web developers use to force a browser to load the newest version of a static file (such as CSS or JavaScript) instead of a previously saved, stale copy
 
-- Micro Caching (Caching for Dynamic Content)
+- Caching Types
+  - Client-Side Caching (Static Content)
+  - Server-Side Caching (Dynamic Content)
+    - Types
+      - Normal Caching: caching a dynamic response for X amount of time
+      - Micro Caching: caching a dynamic response for a very short period, usually a few seconds
+        - Public Content: No need for cache key (most useful for)
+        - Personalized Content: unique cache key needed for each user (like `proxy_cache_key "$scheme$request_method$host$request_uri$cookie_session_id";`)
+    - Types
+      - Proxy Cache
+      - FastCGI Cache
 
-
-- `curl -Ik` (...)
-- Apache Bench (`ab`)
-
+### HTTP Headers
+- `X-Real-IP`
+- `X-Forwarded-For`
+- `Content-Encoding: gzip`
+- `Cache-Control`
+  - `Cache-Control: public`: response can be cached not only by the end user's browser, but also by intermediate
+    proxy/cache servers
+  - `Cache-Control: private`: indicates that the response should only be cached by the end client.
+  - `Cache-Control: public|private, max-age=<seconds>`: specifies how long a resource can remain cached before it is
+    considered stale.
+- `Expires: <specific-date>`
+- Note: When `max-age` and `Expires` are present, `max-age` takes precedence.
+- `Pragma`: deprecated counterpart to `Cache-Control`.
+- `Vary` : It tells caches which request headers can affect the representation of the response.
+  - `Vary: Accept-Encoding`: Like saying cache this response, pay attention to Accept-Encoding because the response can
+    change depending on whether the client supports gzip, etc.
+  - `Vary: Accept-Language`: The response changes based on the client's preferred language.
+  - `Vary: *`: it prevents a cache from using the response for subsequent requests.
 
 ### NginX Modules used
 
@@ -122,3 +124,7 @@ Lecture 17.
 
 ### HTTP Status Codes
 - `304` → Not Modified
+
+### Linux Commands
+- `curl -Ik` (...)
+- Apache Bench (`ab`)
