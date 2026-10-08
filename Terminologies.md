@@ -66,9 +66,9 @@ Lecture 17.
 - Client-Side Caching
 
 ### HTTP Headers
-
 - `X-Real-IP`
 - `X-Forwarded-For`
+- `Content-Encoding: gzip`
 - `Cache-Control`
     - `Cache-Control: public`: response can be cached not only by the end user's browser, but also by intermediate
       proxy/cache servers
@@ -87,7 +87,12 @@ Lecture 17.
 - Gzip compression
 - Transferred Data vs. Resource Size
 - Note: Compression Uses Server Resources (CPU)
-
+- Gzip Compression Level
+  - `1` → Lowest compression, fastest 
+  - `2–3` → Low compression 
+  - `4–6` → Moderate/practical compression 
+  - `7–8` → High compression 
+  - `9` → Maximum compression, slowest
 
 
 ### NginX Modules used
