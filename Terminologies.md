@@ -27,8 +27,13 @@ Lecture 17.
     - `log_format`
     - `add_header`
     - `gzip`
+    - `gzip_min_length`
     - `gzip_comp_level`
     - `gzip_types`
+    - `fastcgi_cache_path`
+    - `fastcgi_cache_key`
+    - `fastcgi_cache`
+    - `fastcgi_cache_valid`
 - NGINX uses an event-based connection processing model
 - Active and Passive/Fallback Servers (?)
 - SCP (Secure Copy Protocol)
@@ -98,12 +103,16 @@ Lecture 17.
   - `9` → Maximum compression, slowest
 - Note: Do not configure Gzip for `.jpg`, `.jpeg`, and `.png` images because these formats are already compressed.
 - Note: When testing manually with `curl` client must explicitly indicate its support for compressed content, A request without an appropriate `Accept-Encoding` header does not necessarily cause NGINX to return the compressed representation.
+- Note: `gzip_min_length` default value is `20 bytes`
+
+- Micro Caching (Caching for Dynamic Content)
+
+
+- `curl -Ik` (...)
+- Apache Bench (`ab`)
+
 
 ### NginX Modules used
 
 - `--with-http_image_filter_module=dynamic`
 - `--with-http_realip_module`
-
-
-
-- `curl -Ik` (IN)
