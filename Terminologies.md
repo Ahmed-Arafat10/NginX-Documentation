@@ -18,8 +18,47 @@ Lecture 17.
     - `upstream`
     - `mail`
 - Directive
+    - `Core`
+      - `user`
+      - `worker_processes`
+      - `worker_connections`
+      - `pid`
+      - `load_module`
+      - `access_log`
+      - `error_log`
     - `include`
     - `listen`
+    - `server_name`
+    - `root`
+    - `index`
+    - `types`
+    - `return`
+    - `rewrite`
+    - `try_files`
+    - `set`
+    - `if`
+    - `client_body_buffer_size`
+    - `client_header_buffer_size`
+    - `client_max_body_size`
+    - `large_client_header_buffers`
+    - `client_body_timeout`
+    - `client_header_timeout`
+    - `keepalive_timeout`
+    - `send_timeout`
+    - `expires`
+    - `fastcgi_cache_bypass` (new)
+    - `fastcgi_no_cache` (new)
+    - `proxy_http_version` (new)
+    - `proxy_next_upstream` (new)
+    - `proxy_next_upstream_tries` (new)
+    - `resolver` (new)
+    - `image_filter`
+    - `ssl_certificate`
+    - `ssl_certificate_key`
+    - `http2`
+    - `sendfile`
+    - `tcp_nopush`
+    - `tcp_nodelay`
     - `proxy_pass`
     - `fastcgi_pass`
     - `location`
