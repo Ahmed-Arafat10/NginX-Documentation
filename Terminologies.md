@@ -46,12 +46,12 @@ Lecture 17.
     - `keepalive_timeout`
     - `send_timeout`
     - `expires`
-    - `fastcgi_cache_bypass` (new)
-    - `fastcgi_no_cache` (new)
-    - `proxy_http_version` (new)
-    - `proxy_next_upstream` (new)
-    - `proxy_next_upstream_tries` (new)
-    - `resolver` (new)
+    - `fastcgi_cache_bypass` (Not Mentioned)
+    - `fastcgi_no_cache` (Not Mentioned)
+    - `proxy_http_version` (Not Mentioned)
+    - `proxy_next_upstream` (Not Mentioned)
+    - `proxy_next_upstream_tries` (Not Mentioned)
+    - `resolver` (Not Mentioned)
     - `image_filter`
     - `ssl_certificate`
     - `ssl_certificate_key`
