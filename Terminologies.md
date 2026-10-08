@@ -97,8 +97,7 @@ Lecture 17.
   - `7–8` → High compression 
   - `9` → Maximum compression, slowest
 - Note: Do not configure Gzip for `.jpg`, `.jpeg`, and `.png` images because these formats are already compressed.
-  When testing manually with curl, however, the instructor demonstrates that the client must explicitly indicate its support for compressed content.
-A request without an appropriate Accept-Encoding header does not necessarily cause NGINX to return the compressed representation.
+- Note: When testing manually with `curl` client must explicitly indicate its support for compressed content, A request without an appropriate `Accept-Encoding` header does not necessarily cause NGINX to return the compressed representation.
 
 ### NginX Modules used
 
