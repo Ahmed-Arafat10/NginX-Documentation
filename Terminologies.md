@@ -26,6 +26,9 @@ Lecture 17.
     - `proxy_set_header`
     - `log_format`
     - `add_header`
+    - `gzip`
+    - `gzip_comp_level`
+    - `gzip_types`
 - NGINX uses an event-based connection processing model
 - Active and Passive/Fallback Servers (?)
 - SCP (Secure Copy Protocol)
@@ -93,9 +96,15 @@ Lecture 17.
   - `4–6` → Moderate/practical compression 
   - `7–8` → High compression 
   - `9` → Maximum compression, slowest
-
+- Note: Do not configure Gzip for `.jpg`, `.jpeg`, and `.png` images because these formats are already compressed.
+  When testing manually with curl, however, the instructor demonstrates that the client must explicitly indicate its support for compressed content.
+A request without an appropriate Accept-Encoding header does not necessarily cause NGINX to return the compressed representation.
 
 ### NginX Modules used
 
 - `--with-http_image_filter_module=dynamic`
 - `--with-http_realip_module`
+
+
+
+- `curl -Ik` (IN)
