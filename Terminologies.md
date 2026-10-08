@@ -61,6 +61,10 @@ Lecture 17.
         - `$date_local`
         - `$hostname`
         - `$nginx_version`
+        - `$scheme`
+        - `$request_method`
+        - `$host`
+        - `$request_uri`
 - `$arg_<name>` Pattern
 - `return` Directive (`return <status-code> <URL-or-response>;`)
     - Its resource consumption is lower than `rewrite`
