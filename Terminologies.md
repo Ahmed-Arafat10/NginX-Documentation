@@ -41,6 +41,9 @@ Lecture 17.
       - `proxy_cache_key`
       - `proxy_cache`
       - `proxy_cache_valid`
+    - `Rate Limiting`
+      - `limit_req_zone`
+      - `limit_req`
 - NGINX uses an event-based connection processing model
 - Active and Passive/Fallback Servers (?)
 - SCP (Secure Copy Protocol)
@@ -140,3 +143,4 @@ Lecture 17.
 ### Linux Commands
 - `curl -Ik` (...)
 - Apache Bench (`ab`)
+- Siege as a load-testing tool
