@@ -26,14 +26,21 @@ Lecture 17.
     - `proxy_set_header`
     - `log_format`
     - `add_header`
-    - `gzip`
-    - `gzip_min_length`
-    - `gzip_comp_level`
-    - `gzip_types`
-    - `fastcgi_cache_path`
-    - `fastcgi_cache_key`
-    - `fastcgi_cache`
-    - `fastcgi_cache_valid`
+    - `gzip Directives`
+      - `gzip`
+      - `gzip_min_length`
+      - `gzip_comp_level`
+      - `gzip_types`
+    - `fastcgi Cache Directives`
+      - `fastcgi_cache_path`
+      - `fastcgi_cache_key`
+      - `fastcgi_cache`
+      - `fastcgi_cache_valid`
+    - `Proxy Cache Directives`
+      - `proxy_cache_path`
+      - `proxy_cache_key`
+      - `proxy_cache`
+      - `proxy_cache_valid`
 - NGINX uses an event-based connection processing model
 - Active and Passive/Fallback Servers (?)
 - SCP (Secure Copy Protocol)
