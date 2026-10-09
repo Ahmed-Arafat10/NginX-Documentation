@@ -46,12 +46,12 @@ Lecture 17.
     - `keepalive_timeout`
     - `send_timeout`
     - `expires`
-    - `fastcgi_cache_bypass` (Not Mentioned)
-    - `fastcgi_no_cache` (Not Mentioned)
-    - `proxy_http_version` (Not Mentioned)
-    - `proxy_next_upstream` (Not Mentioned)
-    - `proxy_next_upstream_tries` (Not Mentioned)
-    - `resolver` (Not Mentioned)
+    - `fastcgi_cache_bypass` [NEW]
+    - `fastcgi_no_cache` [NEW]
+    - `proxy_http_version` [NEW]
+    - `proxy_next_upstream` [NEW]
+    - `proxy_next_upstream_tries` [NEW]
+    - `resolver` [NEW]
     - `image_filter`
     - `ssl_certificate`
     - `ssl_certificate_key`
@@ -109,9 +109,27 @@ Lecture 17.
         - `$request_uri`
         - `$upstream_cache_status`
         - `$server_name`
+        - `$server_port`
         - `$binary_remote_addr`
-        - 
-- `$arg_<name>` Pattern
+        - `$remote_addr`
+        - `$uri`
+        - `$document_root` [NEW]
+        - `$document_uri`
+        - `$proxy_add_x_forwarded_for`: Automatically appends `$remote_addr` to incoming `X-Forwarded-For` header.
+        - `$remote_user`
+        - `$time_local`
+        - `$request`
+        - `$status`
+        - `$http_referer`
+        - `$http_user_agent`
+        - `$http_<header_name>`** — Built-in prefix allowing reading of arbitrary client HTTP request headers (e.g., `$http_x_real_ip`).
+        - `$server_protocol`
+        - `$arg_<name>` Pattern
+        - `$1`, `$2`: Positional regex capture groups created by `rewrite` or regular expression `location` directives.
+        - `$request_id`
+        - `$request_time`
+        - `$upstream_response_time`
+
 - `return` Directive (`return <status-code> <URL-or-response>;`) [?-More Examples]
     - Its resource consumption is lower than `rewrite`
 - `rewrite` Directive (`rewrite <regex> <replacement> [flag];`) [???]
@@ -168,6 +186,8 @@ Lecture 17.
   - `Cache-Control: private`: indicates that the response should only be cached by the end client.
   - `Cache-Control: public|private, max-age=<seconds>`: specifies how long a resource can remain cached before it is
     considered stale.
+  - `Cache-Control: No-Cache`: Requires the cache to revalidate the stored response with the origin server before using it. [???]
+  - `Cache-Control: No-Store`: Prevents caches from storing the request or response. (used with sensitive data)
 - `Expires: <specific-date>`
 - Note: When `max-age` and `Expires` are present, `max-age` takes precedence.
 - `Pragma`: deprecated counterpart to `Cache-Control`.
@@ -176,20 +196,24 @@ Lecture 17.
     change depending on whether the client supports gzip, etc.
   - `Vary: Accept-Language`: The response changes based on the client's preferred language.
   - `Vary: *`: it prevents a cache from using the response for subsequent requests.
+- `Last-Modified`: Date/time file was last modified on disk.
+- `ETag`: Entity tag validator for conditional client caching. [NEW]
+- `Transfer-Encoding`: Form of encoding applied to payload (e.g., `chunked`) [???]
+- `Content-Length`: Body size in bytes.
 
 ### NginX Modules used
 
 - `--with-http_image_filter_module=dynamic`
 - `--with-http_realip_module`
+- `--with-http_v2_module`
 
 ### HTTP Status Codes
 - `304` → Not Modified
+- `429` → Too Many Requests *(Rate limit rejection)*
+- `301` → Moved Permanently
+- `307` → Temporary Redirect *(Preserves HTTP request method)*
 
 ### Linux Commands
-- `curl -Ik` (...)
+- `curl -Ik`
 - Apache Bench (`ab`)
 - Siege (HTTP Load Tester)
-
-
-Cache-Control: No-Cache
-Cache-Control: No-Store
