@@ -108,10 +108,13 @@ Lecture 17.
         - `$host`
         - `$request_uri`
         - `$upstream_cache_status`
+        - `$server_name`
+        - `$binary_remote_addr`
+        - 
 - `$arg_<name>` Pattern
-- `return` Directive (`return <status-code> <URL-or-response>;`)
+- `return` Directive (`return <status-code> <URL-or-response>;`) [?-More Examples]
     - Its resource consumption is lower than `rewrite`
-- `rewrite` Directive (`rewrite <regex> <replacement> [flag];`)
+- `rewrite` Directive (`rewrite <regex> <replacement> [flag];`) [???]
     - Capturing Values with Rewrite
 - `try_files`
 - catch-all block (`location /`)
@@ -152,6 +155,9 @@ Lecture 17.
       - Proxy Cache
       - FastCGI Cache
 
+
+- Leaky Bucket Algorithm (rate limiting used by NginX)
+
 ### HTTP Headers
 - `X-Real-IP`
 - `X-Forwarded-For`
@@ -182,4 +188,4 @@ Lecture 17.
 ### Linux Commands
 - `curl -Ik` (...)
 - Apache Bench (`ab`)
-- Siege as a load-testing tool
+- Siege (HTTP Load Tester)
