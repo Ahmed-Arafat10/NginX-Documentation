@@ -5,3 +5,5 @@
 [16. HTTP Response Codes.md](Course%20Content/Section%2003%20-%20HTTP%20Protocol%20and%20Applications/16.%20HTTP%20Response%20Codes.md)
 
 [23. Lab - NGINX Logging Files & Special Logging.md](Course%20Content/Section%2004%20-%20NginX%20Configuration%20%26%20Applications/23.%20Lab%20-%20NGINX%20Logging%20Files%20%26%20Special%20Logging.md)
+
+[Section 08 - NginX As Load Balancer](Course%20Content/Section%2008%20-%20NginX%20As%20Load%20Balancer)

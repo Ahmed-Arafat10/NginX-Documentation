@@ -189,3 +189,7 @@ Lecture 17.
 - `curl -Ik` (...)
 - Apache Bench (`ab`)
 - Siege (HTTP Load Tester)
+
+
+Cache-Control: No-Cache
+Cache-Control: No-Store
