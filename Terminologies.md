@@ -6,10 +6,20 @@
   - via operating-system package managers (`apt-get` / `yum`).
   - via install & build from source code.
 
-- HTTP
+- HTTP Properties
   - Connectionless
   - Media Independent
   - Stateless
+
+- HTTP Request Structure
+  - Request line
+    - Method Token
+    - Request URI
+    - Protocol version
+  - Zero or more headers
+  - An empty line
+  - Message body (optional)
+
 
 - `nginx.conf`
 - Context
