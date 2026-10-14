@@ -1,5 +1,3 @@
-Lecture 17.
-
 - NGINX master process (runs as root)
 - NGINX worker process (runs as www-data)
 - Digital Ocean
