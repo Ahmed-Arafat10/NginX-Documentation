@@ -1,13 +1,9 @@
 ### To-Do
 
-#### Read + Doc in Term. (No Practice Needed)
-[16. HTTP Response Codes.md](Course%20Content/Section%2003%20-%20HTTP%20Protocol%20and%20Applications/16.%20HTTP%20Response%20Codes.md)
-
 #### Read + Practice + Doc in Term. (Easy)
 [23. Lab - NGINX Logging Files & Special Logging.md](Course%20Content/Section%2004%20-%20NginX%20Configuration%20%26%20Applications/23.%20Lab%20-%20NGINX%20Logging%20Files%20%26%20Special%20Logging.md)
 
 #### Read + Practice + Doc in Term. (Easy)
-[43. Load Balancer Introduction.md](Course%20Content/Section%2008%20-%20NginX%20As%20Load%20Balancer/43.%20Load%20Balancer%20Introduction.md)
 [44. Simple Load Balancer with NGINX.md](Course%20Content/Section%2008%20-%20NginX%20As%20Load%20Balancer/44.%20Simple%20Load%20Balancer%20with%20NGINX.md)
 [45. Default HealthChecks in NGINX Load Balancer.md](Course%20Content/Section%2008%20-%20NginX%20As%20Load%20Balancer/45.%20Default%20HealthChecks%20in%20NGINX%20Load%20Balancer.md)
 [46. Passive HealthCheck In NGINX.md](Course%20Content/Section%2008%20-%20NginX%20As%20Load%20Balancer/46.%20Passive%20HealthCheck%20In%20NGINX.md)

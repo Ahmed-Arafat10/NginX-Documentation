@@ -186,8 +186,44 @@
       - Proxy Cache
       - FastCGI Cache
 
-
 - Leaky Bucket Algorithm (rate limiting used by NginX)
+
+- server pool: A group of servers capable of handling application requests.
+- Failover:	Redirecting traffic away from an unavailable server.
+- Auto-scaling: Increasing the number of application servers when demand increases.
+- Auto-descaling: Reducing the number of application servers when demand decreases.
+
+- expensive requests
+- DNS Round Robin
+- DNS A records
+
+- Load Balancer Functions
+  - Distribute traffic efficiently
+  - Support failover (Ensure high availability and reliability)
+  - Support auto-scaling and auto-descaling
+
+- Load-Balancing Algorithms
+  - Round Robin
+  - Least Connections (TODO: add how it is done in lec 43)
+  - Least Response Time (Nginx Plus Needed) (TODO: add how it is done in lec 43)
+  - Least Bandwidth (No directive for it)
+  - Hashing (TODO: add how it is done in lec 43)
+
+- Related Load-Balancing Fundamentals
+  - Session persistence: Directing requests belonging to the same session to the same server.
+    - `ip_hash` is not identical to full session persistence in every situation. Users behind the same NAT gateway may share an IP address, and a server failure or upstream membership change can affect routing.
+    - Where possible, applications should use shared session storage or stateless authentication so that any healthy backend can handle a request. This reduces dependence on sticky routing.
+  - Dynamic Configuration of Server Groups (auto-scaling / auto-descaling)
+
+- Note: Dynamic scaling requires integration with infrastructure provisioning, monitoring, orchestration, or cloud-management mechanisms. The load balancer alone does not necessarily perform the entire scaling process.
+
+- Hardware vs. Software Load Balancing
+
+- `least_time header|last_byte;`
+- `least_conn;`
+- `ip_hash;`
+- `weight;`
+
 
 ### HTTP Headers
 - `X-Real-IP`
