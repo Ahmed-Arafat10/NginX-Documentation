@@ -6,6 +6,11 @@
   - via operating-system package managers (`apt-get` / `yum`).
   - via install & build from source code.
 
+- HTTP
+  - Connectionless
+  - Media Independent
+  - Stateless
+
 - `nginx.conf`
 - Context
     - `Main / Global` 
