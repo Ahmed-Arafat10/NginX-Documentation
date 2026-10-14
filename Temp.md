@@ -1,7 +1,6 @@
 ### To-Do
 
 #### Read + Doc in Term. (No Practice Needed)
-[15. HTTP Requests & Elements.md](Course%20Content/Section%2003%20-%20HTTP%20Protocol%20and%20Applications/15.%20HTTP%20Requests%20%26%20Elements.md)
 [16. HTTP Response Codes.md](Course%20Content/Section%2003%20-%20HTTP%20Protocol%20and%20Applications/16.%20HTTP%20Response%20Codes.md)
 
 #### Read + Practice + Doc in Term. (Easy)
