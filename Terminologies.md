@@ -234,6 +234,17 @@ Here is a breakdown of what each component means:
 
 - SSL Termination vs. End-to-End Encryption (In Reverse Proxy / Load Balancing)
 
+- Health Check: A mechanism used to assess whether a backend server is available and able to handle requests.
+
+- Health-check mechanisms:
+  - TCP health checks
+    - if a backend NginX server listens on port 80, a TCP connection check can help determine whether that port is accepting connections. 
+    - A successful TCP connection does not necessarily mean that the application is functioning correctly. It only establishes that the TCP connection succeeded.
+  - HTTP health checks (`GET /health HTTP/1.1`)
+  
+- Types of Health Checks in NginX
+    - Passive health checks: observes failures during normal attempts to communicate with a backend server and uses the configured failure criteria to determine whether the server should temporarily be avoided.
+    - Active health checks: actively sends periodic checks to backend servers to evaluate their health independently of ordinary client requests.
 
 ### HTTP Headers
 - `X-Real-IP`
