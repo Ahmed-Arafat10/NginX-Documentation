@@ -244,6 +244,7 @@ Here is a breakdown of what each component means:
   
 - Types of Health Checks in NginX
     - Passive health checks: observes failures during normal attempts to communicate with a backend server and uses the configured failure criteria to determine whether the server should temporarily be avoided.
+      - use Parameters like `max_fails` and `fail_timeout`.
     - Active health checks: actively sends periodic checks to backend servers to evaluate their health independently of ordinary client requests.
 
 ### HTTP Headers
