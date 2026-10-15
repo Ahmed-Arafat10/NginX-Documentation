@@ -221,7 +221,6 @@ Here is a breakdown of what each component means:
 - A: The Record Type. An A record (Address record) maps a hostname directly to an IPv4 address.
 - 192.0.2.10: The Value (or target), which is the specific IPv4 address where traffic for app.example.com will be routed.
 
-
 - Load Balancer Functions
   - Distribute traffic efficiently
   - Support failover (Ensure high availability and reliability)
@@ -258,6 +257,7 @@ Here is a breakdown of what each component means:
       - use Parameters like `max_fails` and `fail_timeout`.
     - Active health checks: actively sends periodic checks to backend servers to evaluate their health independently of ordinary client requests.
         - `health_check uri=/health interval=10s fails=3 passes=2 port=8080 match=custom_match;` directive
+
 ### HTTP Headers
 - `X-Real-IP`
 - `X-Forwarded-For`
