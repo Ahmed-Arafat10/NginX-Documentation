@@ -147,7 +147,7 @@
         - `$status`
         - `$http_referer`
         - `$http_user_agent`
-        - `$http_<header_name>`** — Built-in prefix allowing reading of arbitrary client HTTP request headers (e.g., `$http_x_real_ip`).
+        - `$http_<header_name>`: Built-in prefix allowing reading of arbitrary client HTTP request headers (e.g., `$http_x_real_ip`).
         - `$server_protocol`
         - `$arg_<name>` Pattern
         - `$1`, `$2`: Positional regex capture groups created by `rewrite` or regular expression `location` directives.
