@@ -232,6 +232,9 @@ Here is a breakdown of what each component means:
 
 - Hardware vs. Software Load Balancing
 
+- SSL Termination vs. End-to-End Encryption (In Reverse Proxy / Load Balancing)
+
+
 ### HTTP Headers
 - `X-Real-IP`
 - `X-Forwarded-For`
