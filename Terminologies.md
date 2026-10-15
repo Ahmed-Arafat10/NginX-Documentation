@@ -99,6 +99,8 @@
     - `Rate Limiting`
       - `limit_req_zone`
       - `limit_req`
+    - `health_check`
+    - `error_page`
 - NGINX uses an event-based connection processing model
 - Active and Passive/Fallback Servers (?)
 - SCP (Secure Copy Protocol)
@@ -246,7 +248,7 @@ Here is a breakdown of what each component means:
     - Passive health checks: observes failures during normal attempts to communicate with a backend server and uses the configured failure criteria to determine whether the server should temporarily be avoided.
       - use Parameters like `max_fails` and `fail_timeout`.
     - Active health checks: actively sends periodic checks to backend servers to evaluate their health independently of ordinary client requests.
-
+        - `health_check uri=/health interval=10s fails=3 passes=2 port=8080 match=custom_match;` directive
 ### HTTP Headers
 - `X-Real-IP`
 - `X-Forwarded-For`
