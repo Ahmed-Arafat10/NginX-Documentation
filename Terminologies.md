@@ -101,6 +101,12 @@
       - `limit_req`
     - `health_check`
     - `error_page`
+    - `default_type`: like `octet-stream`
+    - `upstream`
+      - `zone`
+      - `state`
+    - `limit_rate`
+    - `limit_rate_after`
 - NGINX uses an event-based connection processing model
 - Active and Passive/Fallback Servers (?)
 - SCP (Secure Copy Protocol)
@@ -110,6 +116,7 @@
     - `~` → case-sensitive regular expression
     - `~*` → case-insensitive regular expression
     - `^~` → Preferential prefix match
+    - `@` → named locations not selected through normal URI matching used for internal routing
 - Location Matching Priority `= > ^~ > ~* > ~ | (no modifier)`
 - Variables
     - User-Defined Variables (`set $variable value;`)
@@ -147,6 +154,8 @@
         - `$request_id`
         - `$request_time`
         - `$upstream_response_time`
+        - `$upstream_connect_time`
+        - `$upstream_header_time`
 
 - `return` Directive (`return <status-code> <URL-or-response>;`) [?-More Examples]
     - Its resource consumption is lower than `rewrite`
