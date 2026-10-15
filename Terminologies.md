@@ -229,10 +229,10 @@ Here is a breakdown of what each component means:
 
 - Load-Balancing Algorithms
   - Round Robin
-  - Least Connections (TODO: add how it is done in lec 43)
-  - Least Response Time (Nginx Plus Needed) (TODO: add how it is done in lec 43)
+  - Least Connections
+  - Least Response Time (Nginx Plus Needed)
   - Least Bandwidth (No directive for it)
-  - Hashing (TODO: add how it is done in lec 43)
+  - Hashing
 
 - Related Load-Balancing Fundamentals
   - Session persistence (sticky routing): Directing requests belonging to the same session to the same server.
