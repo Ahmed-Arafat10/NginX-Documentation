@@ -20,7 +20,6 @@
   - An empty line
   - Message body (optional)
 
-
 - `nginx.conf`
 - Context
     - `Main / Global` 
@@ -29,6 +28,10 @@
     - `server`
     - `location`
     - `upstream`
+      - `least_time header|last_byte;`
+        - `least_conn;`
+      - `ip_hash;`
+      - `weight;` (Parameter)
     - `mail`
 - Directive
     - `Core`
@@ -188,14 +191,25 @@
 
 - Leaky Bucket Algorithm (rate limiting used by NginX)
 
-- server pool: A group of servers capable of handling application requests.
+- Server Pool: A group of servers capable of handling application requests.
 - Failover:	Redirecting traffic away from an unavailable server.
 - Auto-scaling: Increasing the number of application servers when demand increases.
 - Auto-descaling: Reducing the number of application servers when demand decreases.
 
-- expensive requests
+- Expensive Requests
 - DNS Round Robin
-- DNS A records
+- DNS A records (Address Record)
+````
+app.example.com. 300 IN A 192.0.2.10
+````
+This is a standard DNS A record configuration entry, typically found in a DNS zone file.
+Here is a breakdown of what each component means:
+- app.example.com.: The Domain Name (or hostname) being configured. The trailing dot indicates it is a Fully Qualified Domain Name (FQDN).
+- 300: The TTL (Time to Live) in seconds. This tells DNS resolvers and browsers to cache this specific record for 5 minutes before checking for updates again.
+- IN: The Class of the record, which stands for Internet. This is the standard class used for almost all modern DNS records.
+- A: The Record Type. An A record (Address record) maps a hostname directly to an IPv4 address.
+- 192.0.2.10: The Value (or target), which is the specific IPv4 address where traffic for app.example.com will be routed.
+
 
 - Load Balancer Functions
   - Distribute traffic efficiently
@@ -210,20 +224,13 @@
   - Hashing (TODO: add how it is done in lec 43)
 
 - Related Load-Balancing Fundamentals
-  - Session persistence: Directing requests belonging to the same session to the same server.
+  - Session persistence (sticky routing): Directing requests belonging to the same session to the same server.
     - `ip_hash` is not identical to full session persistence in every situation. Users behind the same NAT gateway may share an IP address, and a server failure or upstream membership change can affect routing.
     - Where possible, applications should use shared session storage or stateless authentication so that any healthy backend can handle a request. This reduces dependence on sticky routing.
   - Dynamic Configuration of Server Groups (auto-scaling / auto-descaling)
-
-- Note: Dynamic scaling requires integration with infrastructure provisioning, monitoring, orchestration, or cloud-management mechanisms. The load balancer alone does not necessarily perform the entire scaling process.
+    - Note: Dynamic scaling requires integration with infrastructure provisioning, monitoring, orchestration, or cloud-management mechanisms. The load balancer alone does not necessarily perform the entire scaling process.
 
 - Hardware vs. Software Load Balancing
-
-- `least_time header|last_byte;`
-- `least_conn;`
-- `ip_hash;`
-- `weight;`
-
 
 ### HTTP Headers
 - `X-Real-IP`
